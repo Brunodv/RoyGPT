@@ -3,8 +3,8 @@ import './App.css'
 //import Form from './components/Form'
 //import GPT from './components/GPT'
 //import { useFetch } from './useFetch'
-const ENDPOINT1 = 'http://localhost:3000/'
-const ENDPOINT2 = 'http://localhost:3000/resp'
+const ENDPOINT1 = 'https://roy-production.up.railway.app/'
+const ENDPOINT2 = 'https://roy-production.up.railway.app/resp'
 
 function App() {
   //const { data } = useFetch("http://localhost:/")
