@@ -3,8 +3,8 @@ import './App.css'
 //import Form from './components/Form'
 //import GPT from './components/GPT'
 //import { useFetch } from './useFetch'
-const ENDPOINT1 = 'https://roy-production.up.railway.app/'
-const ENDPOINT2 = 'https://roy-production.up.railway.app/resp'
+const ENDPOINT1 = 'https://roy-production.up.railway.app'
+const ENDPOINT2 = 'https://roy-production.up.railway.app/api/resp'
 
 function App() {
   //const { data } = useFetch("http://localhost:/")
@@ -23,13 +23,13 @@ function App() {
   const handleChangue = (event)=>{
     setPregunta(event.target.value);
   };
-
   const handleSubmit = (event) => {
     event.preventDefault(); 
+
       fetch(ENDPOINT2,{
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body:JSON.stringify({pregunta:pregunta})
       })
@@ -43,7 +43,7 @@ function App() {
   return (
     <>
     <form onSubmit={handleSubmit}>
-      <h1>Roy GPT 777 Plus Pro Remastered Full Platinium</h1>
+      <h1>Roy GPT 777 PRO MAXIMUS PLUS REMASTERED FINAL PLATINIUM   </h1>
       <h3>
       <label>
         Pregunta a ve:
