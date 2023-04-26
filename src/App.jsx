@@ -11,13 +11,16 @@ function App() {
   const [mensaje, setMensaje] = useState('')
   const [pregunta, setPregunta] = useState('')
   const [respuesta, setRespuesta] = useState('');
+  const [error, setError] = useState('');
 
   useEffect(()=>{
     
     fetch(ENDPOINT1)
     .then(res=>res.json())
     .then(data=>setMensaje(data.message))
-    .catch(error => console.log(error));
+    .catch(error => {setError(error.message);
+      console.error(error);
+    });
   },[]);
 
   const handleChangue = (event)=>{
@@ -43,10 +46,10 @@ function App() {
   return (
     <>
     <form onSubmit={handleSubmit}>
-      <h1>Roy GPT 777 PRO MAXIMUS PLUS REMASTERED FINAL PLATINIUM   </h1>
+      <h1>Consulta a la Api de Chat-gpt desde node</h1>
       <h3>
       <label>
-        Pregunta a ve:
+      Pregunte:
         <input type="text" value={pregunta} onChange={handleChangue} />
       </label>
       </h3>
@@ -54,6 +57,7 @@ function App() {
     </form>
     <p>{mensaje}</p>
     <h3>{respuesta}</h3>
+    {error && <p>{error}</p>}
     </>
   )
   }
